@@ -1,0 +1,110 @@
+// style sheet for cpf_val.html //
+
+* {box-sizing: border-box;}
+
+body {
+  margin-top: 0;
+  color: white;
+}
+
+header {
+  color: white;
+  background-color: DarkSlateGray;
+  text-align: center;
+  overflow: hidden;
+  margin:0;  
+  border-top: 1px solid white;
+  border-bottom: 1px solid transparent;
+  border-radius: 4px; 
+}
+
+header h1 {
+  line-height: 130px;
+  text-align: center;
+}
+
+main {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-radius: 4px; 
+  background-color: DarkSlateGray;
+  padding-left: 8px;
+  padding: 4px;
+
+}
+
+.form {
+	display: inline-block;
+	
+}
+
+.form_txt {
+  padding: 8px 5px;
+  float: left;
+}
+
+.form_input, .form_button, .result {
+  display: block;
+  float: left;
+  padding: 5px;
+  border-radius: 4px; 
+}  
+
+
+.result {
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 1150px) {
+  .result  {
+    display: block;
+    clear: both;
+	transition: 0.7s;
+  }
+	
+} 
+
+
+@media screen and (max-width: 600px){
+  *{
+    transition: all 0.9s;
+  }
+  
+  .form_button, .form_input, .form_txt, .result  {
+    display: block;
+	width: 100%;
+    text-align: center;
+	border-radius: 4px; 
+	clear: both;
+	transition: 0.7s;
+  }
+
+  .form {
+	display: block;
+    height: 180px;
+	width: 75%;
+	margin: 0 auto;
+	padding: 0;
+  }
+  
+  input[id~="numero_cpf"]{
+	width: 100%;  
+  }
+  
+  button {
+	padding: 1px 0;
+  }
+}
+
+
+@media screen and (max-width: 480px){
+  *{
+    transition: 0.7s;
+  }
+  
+  .form {
+	display: block;
+    height: 210px;
+  }	
+}	
