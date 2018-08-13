@@ -1,23 +1,31 @@
 function valida_cpf() {
 	var cpf = document.getElementById("numero_cpf").value;
-	var equal = true, hifen = undefined; 
+	var equal = true; 
 	var x = 0, y = 0, ind = 0;
 	var reg = "";
-
-	cpf = cpf.toString();
+	var cpf_number;
+	
+	cpf_number = parseInt(cpf);			// usado na validação de eventual uso de traços (hifens).
 	cpf = cpf.split("");
+	
+
 
 	while (equal == true && ind < 10) {	//	testa se os digitos sao iguais.
 	  equal = (cpf[0] == cpf[ind]);
 	  ind++;
 	}
 	
-	if (cpf.length == 0) {
+	
+	
+	if ((isNaN(cpf_number)) || (/[.]/.exec(cpf) == ".")) {	// procura por traços ou pontos
+	  document.getElementById("result").innerHTML = 
+	  "CPF inválido. O numero do CPF não pode conter pontos ou traços!";
+	} else if (cpf.length === 0) {
 	  document.getElementById("result").innerHTML = 
 	  "Campo obrigatório. Informe um CPF.";
 	} else if (cpf.length !== 11) {
 	  document.getElementById("result").innerHTML = 
-	  "CPF inválido. O numero do CPF deve conter exatamente 11 digitos sem pontos ou traços!";
+	  "CPF inválido. O numero do CPF deve conter exatamente 11 digitos!";
  	} else if (equal) {
 	  document.getElementById("result").innerHTML = 
 	  "CPF inválido. O numero do CPF deve conter digitos distintos!";
@@ -77,6 +85,8 @@ function valida_cpf() {
 	  }
 	}
 }
+
+
 function inv() {
 
       document.getElementById('header').style.backgroundColor = "white";
