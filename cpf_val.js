@@ -5,30 +5,29 @@ function valida_cpf() {
 	var reg = "";
 	var cpf_number;
 	
-	cpf_number = parseInt(cpf);			// usado na validação de eventual uso de traços (hifens).
+	cpf_number = parseInt(cpf);		// usado na validaÃ§Ã£o de eventual uso de traÃ§os (hifens).
 	cpf = cpf.split("");
 	
 
 
-	while (equal == true && ind < 10) {	//	testa se os digitos sao iguais.
+	while (equal == true && ind < 11) {	// testa se os digitos sao iguais.
 	  equal = (cpf[0] == cpf[ind]);
 	  ind++;
 	}
+		
 	
-	
-	
-	if ((isNaN(cpf_number)) || (/[.]/.exec(cpf) == ".")) {	// procura por traços ou pontos
+	if ((isNaN(cpf_number)) || (/[.]/.exec(cpf) == ".")) {	// procura por traÃ§os ou pontos
 	  document.getElementById("result").innerHTML = 
-	  "CPF inválido. O numero do CPF não pode conter pontos ou traços!";
+	  "CPF invÃ¡lido. O numero do CPF nÃ£o pode conter pontos ou traÃ§os!";
 	} else if (cpf.length === 0) {
 	  document.getElementById("result").innerHTML = 
-	  "Campo obrigatório. Informe um CPF.";
+	  "Campo obrigatÃ³rio. Informe um CPF.";
 	} else if (cpf.length !== 11) {
 	  document.getElementById("result").innerHTML = 
-	  "CPF inválido. O numero do CPF deve conter exatamente 11 digitos!";
+	  "CPF invÃ¡lido. O numero do CPF deve conter exatamente 11 digitos!";
  	} else if (equal) {
 	  document.getElementById("result").innerHTML = 
-	  "CPF inválido. O numero do CPF deve conter digitos distintos!";
+	  "CPF invÃ¡lido. O numero do CPF deve conter digitos distintos!";
  	} else {
 	  for (i = 0; i < 9; i++){
 		x+= (cpf[i] * (10 - i))*10;
@@ -48,16 +47,16 @@ function valida_cpf() {
 			reg = "Rio Grande do Sul";
 			break;
 		  case "1": 
-			reg = "Distrito Federal, Goiás, Mato Grosso do Sul e Tocantins";
+			reg = "Distrito Federal, GoiÃ¡s, Mato Grosso do Sul e Tocantins";
 			break;
 		  case "2": 
-			reg = "Pará, Amazonas, Acre, Amapá, Rondônia e Roraima";
+			reg = "ParÃ¡, Amazonas, Acre, AmapÃ¡, RondÃ´nia e Roraima";
 			break;
 		  case "3": 
-			reg = "Ceará, Maranhão e Piauí";
+			reg = "CearÃ¡, MaranhÃ£o e PiauÃ­";
 			break;
 		  case "4": 
-			reg = "Pernambuco, Rio Grande do Norte, Paraíba e Alagoas";
+			reg = "Pernambuco, Rio Grande do Norte, ParaÃ­ba e Alagoas";
 			break;
 		  case "5": 
 			reg = "Bahia e Sergipe";
@@ -66,22 +65,22 @@ function valida_cpf() {
 			reg = "Minas Gerais";
 			break;
 		  case "7": 
-			reg = "Rio de Janeiro e Espírito Santo";
+			reg = "Rio de Janeiro e EspÃ­rito Santo";
 			break;
 		  case "8": 
-			reg = "São Paulo";
+			reg = "SÃ£o Paulo";
 			break;
 		  case "9": 
-			reg = "Paraná e Santa Catarina";
+			reg = "ParanÃ¡ e Santa Catarina";
 			break;
 		  }
 		
 		document.getElementById("result").innerHTML = 
-		"CPF válido!" + "&nbsp &nbsp &nbsp &nbsp" + "Região: " + reg; 
+		"CPF vÃ¡lido!" + "&nbsp &nbsp &nbsp &nbsp" + "RegiÃ£o: " + reg; 
 		
 	  } else {
 		document.getElementById("result").innerHTML = 
-		"CPF inválido. Tente novamente."; 
+		"CPF invÃ¡lido. Tente novamente."; 
 	  }
 	}
 }
